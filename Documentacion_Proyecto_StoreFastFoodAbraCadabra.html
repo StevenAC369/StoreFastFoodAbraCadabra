@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Guía del proyecto StoreFastFoodAbraCadabra</title>
+<style>
+  @page { size: A4; margin: 16mm 17mm 17mm; }
+  * { box-sizing: border-box; }
+  body { color: #243247; font: 10pt/1.42 Arial, Helvetica, sans-serif; margin: 0; }
+  h1, h2, h3 { color: #16324f; margin: 0; }
+  h1 { font-size: 30pt; line-height: 1.1; }
+  h2 { font-size: 19pt; margin-bottom: 12pt; padding-bottom: 5pt; border-bottom: 2px solid #dd6b36; }
+  h3 { font-size: 12pt; margin: 12pt 0 5pt; }
+  p { margin: 5pt 0 8pt; }
+  ul, ol { margin: 5pt 0 9pt; padding-left: 18pt; }
+  li { margin: 3pt 0; }
+  code { color: #16324f; font: 9pt Consolas, monospace; }
+  .page { page-break-after: always; min-height: 258mm; position: relative; }
+  .page:last-child { page-break-after: auto; }
+  .eyebrow { color: #dd6b36; font-size: 10pt; font-weight: bold; letter-spacing: 1.2pt; text-transform: uppercase; }
+  .cover { align-items: flex-start; background: linear-gradient(145deg, #f4f7fa 0%, #fff 70%); display: flex; flex-direction: column; justify-content: center; padding: 18mm; }
+  .cover h1 { margin: 13pt 0; max-width: 145mm; }
+  .subtitle { color: #52657a; font-size: 14pt; max-width: 145mm; }
+  .coverbox { background: #16324f; border-left: 5px solid #dd6b36; color: white; margin-top: 22pt; padding: 13pt 16pt; width: 100%; }
+  .coverbox strong { color: #ffbd8e; }
+  .meta { color: #52657a; margin-top: 20pt; }
+  .callout { background: #fff4e9; border-left: 4px solid #dd6b36; margin: 9pt 0; padding: 9pt 11pt; }
+  .info { background: #eef5fa; border-left: 4px solid #4d87ad; margin: 9pt 0; padding: 9pt 11pt; }
+  .warning { background: #fff0ef; border-left: 4px solid #c44b42; margin: 9pt 0; padding: 9pt 11pt; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; margin: 9pt 0; }
+  .card { background: #f3f6f8; border-radius: 4px; padding: 9pt; }
+  table { border-collapse: collapse; font-size: 9pt; margin: 8pt 0 11pt; width: 100%; }
+  th { background: #16324f; color: white; text-align: left; }
+  th, td { border: 1px solid #d6dfe6; padding: 6pt 7pt; vertical-align: top; }
+  tr:nth-child(even) td { background: #f5f8fa; }
+  .small { color: #52657a; font-size: 8.5pt; }
+  .flow { background: #16324f; color: white; font-weight: bold; margin: 10pt 0; padding: 10pt; text-align: center; }
+  .tag { color: #27724d; font-weight: bold; }
+  .muted { color: #788594; }
+  .footer { bottom: 0; color: #748294; font-size: 8pt; position: absolute; width: 100%; }
+  .footer span:last-child { float: right; }
+  .toc li { margin: 7pt 0; }
+  .compact td, .compact th { padding: 4pt 6pt; }
+</style>
+</head>
+<body>
+
+<section class="page cover">
+  <div class="eyebrow">Guía de incorporación · versión beta</div>
+  <h1>StoreFastFood<br>AbraCadabra</h1>
+  <p class="subtitle">Documentación funcional y técnica para conocer, ejecutar y continuar el proyecto.</p>
+  <div class="coverbox">
+    <strong>Alcance de esta guía</strong><br>
+    Describe la estructura del proyecto y las acciones que están conectadas en la aplicación actual. Las pantallas dibujadas pero sin lógica se identifican expresamente para evitar confundir prototipos con funciones disponibles.
+  </div>
+  <p class="meta">Aplicación de escritorio Java Swing · PostgreSQL · Maven<br>Preparado para integrantes nuevos del equipo · Octubre de 2026</p>
+  <div class="footer"><span>StoreFastFoodAbraCadabra · guía del proyecto</span><span>Documento de incorporación</span></div>
+</section>
+
+<section class="page">
+  <h2>1. Qué es el proyecto</h2>
+  <p>StoreFastFoodAbraCadabra es una aplicación de escritorio para un restaurante de comida rápida. La versión actual permite iniciar sesión y administrar el catálogo de productos desde la pantalla principal. El resto de las pestañas presenta partes de una interfaz en construcción.</p>
+  <div class="flow">Inicio de la aplicación → acceso → catálogo de productos → PostgreSQL</div>
+  <div class="grid">
+    <div class="card"><h3>Disponible y conectado</h3><ul><li>Validación del usuario y contraseña.</li><li>Lectura y filtrado del catálogo.</li><li>Alta de productos.</li><li>Eliminación de productos seleccionados.</li><li>Apertura de la ventana de ajustes.</li></ul></div>
+    <div class="card"><h3>Interfaz todavía parcial</h3><ul><li>Tomar pedidos y calcular el total.</li><li>Cola de cocina e historial.</li><li>Reportes y métricas.</li><li>Gestión de clientes desde la interfaz.</li><li>Gestión real de miembros, roles y permisos.</li></ul></div>
+  </div>
+  <h3>Contenido</h3>
+  <ol class="toc">
+    <li>Cómo se organiza el código</li>
+    <li>Requisitos y puesta en marcha</li>
+    <li>Guía de las acciones que sí funcionan</li>
+    <li>Botones visibles que aún no están implementados</li>
+    <li>Persistencia de datos y flujo interno</li>
+    <li>Límites actuales y sugerencias para contribuir</li>
+  </ol>
+  <div class="info"><strong>Regla práctica:</strong> un botón visible no necesariamente tiene una acción implementada. En esta guía se considera operativo solo cuando su evento está conectado a una operación observable en la aplicación.</div>
+  <div class="footer"><span>1 · Visión general</span><span>StoreFastFoodAbraCadabra</span></div>
+</section>
+
+<section class="page">
+  <h2>2. Organización del código</h2>
+  <table class="compact">
+    <thead><tr><th>Ubicación</th><th>Responsabilidad</th><th>Ejemplos</th></tr></thead>
+    <tbody>
+      <tr><td><code>src/main/java/Entidad</code></td><td>Objetos de dominio que representan datos del negocio.</td><td><code>Producto</code>, <code>Usuario</code>, <code>Cliente</code></td></tr>
+      <tr><td><code>src/main/java/Data</code></td><td>Acceso JDBC a PostgreSQL; prepara tablas y ejecuta consultas.</td><td><code>ProductosDAO</code>, <code>UserDAO</code>, <code>ClienteDAO</code>, <code>Conexion</code></td></tr>
+      <tr><td><code>src/main/java/Servicios</code></td><td>Operaciones usadas por las pantallas; prepara filas y delega en los DAO.</td><td><code>ServiciosProductos</code>, <code>ServiciosUsuario</code>, <code>ServiciosCliente</code></td></tr>
+      <tr><td><code>src/main/java/projects/abracadabra/mavenproject2/Vista</code></td><td>Ventanas y formularios Swing.</td><td><code>Master</code>, <code>Inicio</code>, <code>AgregarProducto</code>, <code>Settings</code></td></tr>
+      <tr><td><code>pom.xml</code></td><td>Configuración Maven, versión de Java y dependencia JDBC de PostgreSQL.</td><td>Driver PostgreSQL 42.7.3; compilación configurada para Java 26.</td></tr>
+    </tbody>
+  </table>
+  <h3>Responsabilidades y llamadas</h3>
+  <p>Las ventanas capturan la interacción. Las clases de <code>Servicios</code> adaptan esa interacción (por ejemplo, construyen el modelo de la tabla) y llaman a los DAO. Las clases de <code>Data</code> ejecutan SQL con <code>PreparedStatement</code> y traducen los resultados a entidades. <code>Conexion</code> centraliza la apertura de conexiones JDBC.</p>
+  <div class="flow">Vista Swing → Servicios → DAO (JDBC) → PostgreSQL</div>
+  <h3>Clases principales de la interfaz</h3>
+  <ul>
+    <li><code>Main</code>: punto de entrada alternativo; abre la ventana de acceso <code>Master</code>.</li>
+    <li><code>Master</code>: formulario de acceso y navegación a <code>Inicio</code> tras validar las credenciales.</li>
+    <li><code>Inicio</code>: panel con pestañas de resumen, nuevo pedido, cocina, historial, reportes y bodega/logística.</li>
+    <li><code>AgregarProducto</code>: diálogo modal con campos del catálogo.</li>
+    <li><code>UsuarioActivo</code>: conserva en memoria el nombre de la sesión actual; no es persistencia.</li>
+  </ul>
+  <p class="small">Los archivos <code>.form</code> de NetBeans describen el diseño visual. El bloque generado de Swing se marca como código generado; los cambios de comportamiento suelen ir en los manejadores de eventos y servicios.</p>
+  <div class="footer"><span>2 · Estructura</span><span>StoreFastFoodAbraCadabra</span></div>
+</section>
+
+<section class="page">
+  <h2>3. Requisitos y puesta en marcha</h2>
+  <h3>Antes de ejecutar</h3>
+  <ol>
+    <li>Usar un JDK compatible con la configuración del proyecto (el <code>pom.xml</code> declara Java 26) y Maven.</li>
+    <li>Configurar acceso a una instancia PostgreSQL autorizada y disponible desde el equipo.</li>
+    <li>Revisar <code>Data.Conexion</code>: la URL, el usuario y la contraseña están configurados dentro del código actual. No distribuir ni publicar esos valores; reemplazarlos por configuración local segura antes de compartir el proyecto.</li>
+    <li>Comprobar que el usuario de base de datos tenga permisos para conectarse, consultar y crear las tablas usadas por la aplicación.</li>
+  </ol>
+  <div class="warning"><strong>Importante para el equipo:</strong> la configuración de conexión debe externalizarse antes de desplegar o compartir el repositorio. Este documento intencionalmente no reproduce host, usuario ni contraseña.</div>
+  <h3>Arranque desde el IDE</h3>
+  <ol>
+    <li>Abrir el proyecto Maven en el IDE.</li>
+    <li>Resolver la dependencia JDBC PostgreSQL definida en <code>pom.xml</code>.</li>
+    <li>Ejecutar la clase <code>projects.abracadabra.mavenproject2.Vista.Main</code> (método <code>main</code>). Como alternativa, <code>Master</code> también tiene un punto de entrada.</li>
+    <li>Si aparece un error de conexión, verificar primero la red, el servidor y la configuración local antes de diagnosticar la interfaz.</li>
+  </ol>
+  <h3>Nota de configuración de Maven</h3>
+  <p>La propiedad <code>exec.mainClass</code> en el <code>pom.xml</code> apunta al punto de entrada <code>projects.abracadabra.mavenproject2.Vista.Main</code>. La clase <code>Vista.Master</code> también tiene un método <code>main</code>.</p>
+  <h3>Inicialización de tablas</h3>
+  <p>Los DAO crean sus tablas con <code>CREATE TABLE IF NOT EXISTS</code> al inicializarse. Por eso, el acceso a la base de datos es necesario desde el inicio de sesión y al cargar el panel; las tablas no se crean si no hay conexión.</p>
+  <div class="info"><strong>Primera comprobación:</strong> ejecutar la aplicación desde el IDE con la configuración local, iniciar sesión y confirmar que aparece el panel principal y que la tabla de productos carga datos o queda vacía sin error.</div>
+  <div class="footer"><span>3 · Puesta en marcha</span><span>StoreFastFoodAbraCadabra</span></div>
+</section>
+
+<section class="page">
+  <h2>4. Guía de las acciones operativas</h2>
+  <h3>Acceso</h3>
+  <ol>
+    <li>Escribir el usuario y la contraseña en la ventana inicial.</li>
+    <li>Pulsar <strong>Iniciar</strong>.</li>
+    <li>Con credenciales válidas, se abre el panel principal. Si no son válidas, aparece un mensaje de error. Si PostgreSQL no responde, se informa un error de conexión.</li>
+  </ol>
+  <h3>Ver y filtrar productos</h3>
+  <p>Abrir la pestaña <strong>Nuevo Pedido</strong>. La tabla se carga al construir la pantalla. En la columna de texto <strong>Buscar</strong>, escribir el código o la descripción para actualizar los resultados. La búsqueda se dispara al presionar teclas; no hay un botón de búsqueda separado.</p>
+  <table class="compact">
+    <thead><tr><th>Acción</th><th>Resultado</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Todos</strong></td><td>Recarga la lista completa.</td></tr>
+      <tr><td><strong>Hamburgueas</strong></td><td>Filtra por categoría «Hamburguesas».</td></tr>
+      <tr><td><strong>Acompañamientos</strong></td><td>Filtra esa categoría.</td></tr>
+      <tr><td><strong>Bebidas</strong></td><td>Filtra esa categoría.</td></tr>
+      <tr><td><strong>Postres</strong></td><td>Filtra esa categoría.</td></tr>
+    </tbody>
+  </table>
+  <p class="small">La búsqueda del campo de texto compara el valor capturado contra código y descripción. Los filtros de categoría dependen de que el texto guardado en la base coincida con el nombre que espera cada filtro.</p>
+  <h3>Agregar un producto</h3>
+  <ol>
+    <li>Pulsar <strong>Agregar</strong> en la pantalla de catálogo.</li>
+    <li>Completar código, descripción, precio, cantidad, estado y categoría.</li>
+    <li>El precio debe poder convertirse a número decimal y la cantidad a entero. Los estados ofrecidos son «Crudo», «Cocinado» y «Para Enviar»; las categorías incluyen «Hamburguesas», «Bebidas», «Acompañamientos», «Combos» y «Postres».</li>
+    <li>Pulsar <strong>Agregar</strong> dentro del diálogo. Al finalizar, cerrar el diálogo para que el panel recargue la tabla.</li>
+  </ol>
+  <div class="warning"><strong>Atención:</strong> el botón «Cancelar» del diálogo no tiene un manejador conectado. Para cerrar el diálogo, usar el control de cierre de la ventana. El formulario no valida que todos los campos tengan contenido; revisar los datos antes de guardar.</div>
+  <h3>Eliminar un producto</h3>
+  <ol>
+    <li>Seleccionar una fila de la tabla.</li>
+    <li>Pulsar <strong>Eliminar</strong>.</li>
+    <li>La fila se borra por su código y la tabla se vuelve a cargar. Sin fila seleccionada no se envía una eliminación.</li>
+  </ol>
+  <div class="footer"><span>4 · Uso funcional</span><span>StoreFastFoodAbraCadabra</span></div>
+</section>
+
+<section class="page">
+  <h2>5. Botones visibles y estado real</h2>
+  <table class="compact">
+    <thead><tr><th>Zona / control</th><th>Estado</th><th>Comportamiento actual</th></tr></thead>
+    <tbody>
+      <tr><td>Acceso · <strong>Iniciar</strong></td><td class="tag">Operativo</td><td>Consulta usuario y contraseña en la base de datos; abre el panel o muestra un error.</td></tr>
+      <tr><td>Nuevo Pedido · <strong>Todos</strong></td><td class="tag">Operativo</td><td>Vuelve a cargar todos los productos.</td></tr>
+      <tr><td>Nuevo Pedido · <strong>Hamburgueas</strong></td><td class="tag">Operativo</td><td>Filtra productos por hamburguesas.</td></tr>
+      <tr><td>Nuevo Pedido · <strong>Acompañamientos</strong></td><td class="tag">Operativo</td><td>Filtra acompañamientos.</td></tr>
+      <tr><td>Nuevo Pedido · <strong>Bebidas</strong></td><td class="tag">Operativo</td><td>Filtra bebidas.</td></tr>
+      <tr><td>Nuevo Pedido · <strong>Postres</strong></td><td class="tag">Operativo</td><td>Filtra postres.</td></tr>
+      <tr><td>Nuevo Pedido · <strong>Agregar</strong></td><td class="tag">Operativo</td><td>Abre el formulario modal para insertar un producto.</td></tr>
+      <tr><td>Formulario · <strong>Agregar</strong></td><td class="tag">Operativo</td><td>Convierte datos y solicita guardar el producto.</td></tr>
+      <tr><td>Nuevo Pedido · <strong>Eliminar</strong></td><td class="tag">Operativo</td><td>Elimina el producto de la fila seleccionada.</td></tr>
+      <tr><td>Resumen · <strong>Ajustes</strong></td><td>Parcial</td><td>Abre la ventana de ajustes. Los controles internos no realizan gestión efectiva.</td></tr>
+    </tbody>
+  </table>
+  <h3>Controles que se ven, pero no completan una acción</h3>
+  <table class="compact">
+    <thead><tr><th>Control / pantalla</th><th>Estado en el código</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Combos</strong></td><td>El manejador está vacío; no filtra el catálogo.</td></tr>
+      <tr><td><strong>Pedir</strong></td><td>Sin lógica conectada; no crea ni confirma pedidos.</td></tr>
+      <tr><td><strong>Administrar Clientes</strong></td><td>Sin acción desde el panel. Hay DAO y servicio de clientes, pero no están conectados a esta vista.</td></tr>
+      <tr><td><strong>Ver Reporte</strong></td><td>Sin acción conectada; no genera un informe.</td></tr>
+      <tr><td><strong>Preparar</strong>, <strong>Marcar Listo</strong> y <strong>Todos</strong> en Cola de Cocina</td><td>Los eventos están vacíos; no modifican pedidos.</td></tr>
+      <tr><td><strong>Cancelar</strong> en el formulario de producto</td><td>No tiene manejador; el botón no cierra el diálogo.</td></tr>
+      <tr><td>Botones de Ajustes y administración de usuarios</td><td>La ventana es principalmente visual; sus botones no implementan las operaciones descritas por sus etiquetas.</td></tr>
+    </tbody>
+  </table>
+  <div class="info">Las pestañas Historial de Pedidos, Reportes y Bodega y Logística muestran estructura visual y valores de muestra. No deben usarse como fuente de datos ni como funciones de negocio disponibles.</div>
+  <div class="footer"><span>5 · Alcance de los controles</span><span>StoreFastFoodAbraCadabra</span></div>
+</section>
+
+<section class="page">
+  <h2>6. Datos y flujo interno</h2>
+  <h3>Tablas que administra el código</h3>
+  <table class="compact">
+    <thead><tr><th>Tabla</th><th>Campos principales</th><th>Uso observado</th></tr></thead>
+    <tbody>
+      <tr><td><code>usuarios</code></td><td><code>username</code> (clave), <code>password</code>, <code>rol</code></td><td>Autenticación de acceso en <code>UserDAO</code>.</td></tr>
+      <tr><td><code>productos</code></td><td><code>codigo</code> (clave), <code>descripcion</code>, <code>precio</code>, <code>cantidad</code>, <code>estado</code>, <code>categoria</code></td><td>Listado, búsqueda, inserción y eliminación desde el catálogo.</td></tr>
+      <tr><td><code>clientes</code></td><td><code>identificacion</code> (clave), <code>nombres</code>, <code>telefono</code>, <code>direccion</code></td><td>DAO y métodos de servicio disponibles; sin controles de interfaz conectados.</td></tr>
+    </tbody>
+  </table>
+  <h3>Flujo de productos</h3>
+  <ul>
+    <li><code>Inicio</code> llama a <code>ServiciosProductos.CargarTabla</code> al abrirse.</li>
+    <li><code>ServiciosProductos</code> llama a <code>ProductosDAO</code> y proyecta las entidades en una <code>JTable</code>.</li>
+    <li><code>ProductosDAO</code> ejecuta las operaciones de PostgreSQL usando parámetros para los valores de consulta.</li>
+    <li>El código de producto es la clave primaria; códigos duplicados no pueden guardarse como registros separados.</li>
+  </ul>
+  <h3>Flujo de clientes y usuarios</h3>
+  <p><code>ServiciosCliente</code> y <code>ClienteDAO</code> cubren cargar, agregar, eliminar y buscar clientes, además de actualizar en el DAO. Sin embargo, no existe una pantalla conectada a esos métodos desde el botón «Administrar Clientes». <code>ServiciosUsuario</code> delega la autenticación en <code>UserDAO</code>; no hay un flujo de interfaz completo para administrar usuarios.</p>
+  <h3>Errores comunes</h3>
+  <table class="compact">
+    <thead><tr><th>Síntoma</th><th>Qué comprobar</th></tr></thead>
+    <tbody>
+      <tr><td>No abre el panel o muestra error de conexión</td><td>Conectividad PostgreSQL, configuración local y permisos.</td></tr>
+      <tr><td>No se agrega el producto</td><td>Código único, precio decimal válido, cantidad entera y conexión activa.</td></tr>
+      <tr><td>Un filtro queda vacío</td><td>Que la categoría guardada coincida con el literal que filtra la pantalla.</td></tr>
+      <tr><td>Un botón no responde</td><td>Consultar la tabla de estado de controles: puede ser una interfaz aún sin implementar.</td></tr>
+    </tbody>
+  </table>
+  <div class="footer"><span>6 · Persistencia y soporte</span><span>StoreFastFoodAbraCadabra</span></div>
+</section>
+
+<section class="page">
+  <h2>7. Cómo continuar el desarrollo</h2>
+  <h3>Convenciones que ya usa el código</h3>
+  <ul>
+    <li>Mantener separadas vista, servicio, DAO y entidad.</li>
+    <li>Usar <code>PreparedStatement</code> para valores variables de SQL.</li>
+    <li>Al agregar una acción nueva, conectar su manejador de evento, servicio, DAO y actualización visual; comprobar tanto éxito como error.</li>
+    <li>En formularios, validar campos vacíos y formatos antes de llamar al DAO; mostrar mensajes que ayuden a corregir los datos.</li>
+    <li>Para operaciones destructivas, seleccionar el registro correcto y actualizar la tabla después de la operación.</li>
+  </ul>
+  <h3>Orden sugerido para una persona nueva</h3>
+  <ol>
+    <li>Revisar primero la vista <code>Master</code> y seguir el evento de acceso hasta <code>ServiciosUsuario</code> y <code>UserDAO</code>.</li>
+    <li>Seguir el ciclo completo de productos: <code>Inicio</code> → <code>ServiciosProductos</code> → <code>ProductosDAO</code> → entidad <code>Producto</code>.</li>
+    <li>Ejecutar la aplicación con una base de desarrollo autorizada y probar recarga, filtros, alta y eliminación.</li>
+    <li>Antes de implementar clientes, conectar explícitamente la interfaz con <code>ServiciosCliente</code> y decidir el flujo de pantalla.</li>
+    <li>Tratar pedidos, cocina, historial, reportes y logística como trabajo pendiente; actualmente no existe persistencia funcional para esos flujos.</li>
+  </ol>
+  <div class="warning"><strong>Antes de compartir o desplegar:</strong> sacar las credenciales de <code>Data.Conexion</code>, revisar la configuración del punto de entrada Maven y sustituir las credenciales de demostración/autenticación por un mecanismo apropiado para el entorno. No incluir secretos en capturas, manuales ni repositorios.</div>
+  <h3>Estado resumido</h3>
+  <p>La aplicación es una base funcional para acceso y mantenimiento elemental del catálogo. Los formularios de pedidos, cocina, clientes, reportes, usuarios y ajustes aún requieren conexión de eventos y operaciones de negocio antes de presentarse como funciones disponibles para el personal del restaurante.</p>
+  <div class="coverbox"><strong>Bienvenido/a al proyecto.</strong><br>Para empezar con seguridad: configura una base local, ejecuta <code>Vista.Main</code> y prueba únicamente las acciones marcadas como operativas en esta guía.</div>
+  <div class="footer"><span>7 · Próximos pasos</span><span>StoreFastFoodAbraCadabra · Octubre de 2026</span></div>
+</section>
+
+</body>
+</html>
