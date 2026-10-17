@@ -26,7 +26,7 @@ public class UsuariosViewManager {
             
             List<Usuario> usuarios = ServiciosUsuario.MostrarUsuarios();
             DefaultTableModel modeloTabla = new DefaultTableModel(
-                    new String[]{"username", "rol", "Fecha de creacion"}, 0);
+                    new String[]{"Usuario", "Rol", "Fecha de creación"}, 0);
             for (Usuario usuario : usuarios) {
                 
                 modeloTabla.addRow(new Object[]{

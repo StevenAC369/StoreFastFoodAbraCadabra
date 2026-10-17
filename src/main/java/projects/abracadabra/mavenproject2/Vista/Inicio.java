@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author Steven
  */
 public class Inicio extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Inicio.class.getName());
 
     /**
@@ -22,7 +22,7 @@ public class Inicio extends javax.swing.JFrame {
         AdministradorDePermisos.VerificarBotonesSuperSudo(ButtonSettings, ButtonAdministrarClientes);
         ProductosViewManager.CargarTabla(jTable1);
         PedidosViewManager.CargarTablaPedidos(jTable2);
-        
+
     }
 
     /**
@@ -79,11 +79,11 @@ public class Inicio extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jLabel18 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        jLabelTotal = new javax.swing.JLabel();
+        jLabelSubtotal = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
+        jLabelImpuestos = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jToggleButton7 = new javax.swing.JToggleButton();
         ButtonEliminarProducto = new javax.swing.JToggleButton();
@@ -102,9 +102,7 @@ public class Inicio extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jSpinner1 = new javax.swing.JSpinner();
-        jTextFieldDireccionCliente1 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jToggleButton10 = new javax.swing.JToggleButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel38 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -286,7 +284,7 @@ public class Inicio extends javax.swing.JFrame {
 
         jLabel34.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel34.setText("Clientes Actual");
+        jLabel34.setText("Clientes actuales");
 
         jLabel35.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(0, 153, 0));
@@ -339,14 +337,14 @@ public class Inicio extends javax.swing.JFrame {
         jScrollPane4.setViewportView(jTableProductos);
 
         jLabel37.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel37.setText("Acciones Recientes");
+        jLabel37.setText("Acciones recientes");
 
         ButtonAdministrarClientes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        ButtonAdministrarClientes.setText("Administrar Clientes");
+        ButtonAdministrarClientes.setText("Administrar clientes");
         ButtonAdministrarClientes.addActionListener(this::ButtonAdministrarClientesActionPerformed);
 
         jToggleButton11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jToggleButton11.setText("Ver Reporte");
+        jToggleButton11.setText("Ver reporte");
         jToggleButton11.addActionListener(this::jToggleButton11ActionPerformed);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -448,7 +446,7 @@ public class Inicio extends javax.swing.JFrame {
         jToggleButton2.addActionListener(this::jToggleButton2ActionPerformed);
 
         jToggleButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jToggleButton3.setText("Hamburgueas");
+        jToggleButton3.setText("Hamburguesas");
         jToggleButton3.addActionListener(this::jToggleButton3ActionPerformed);
 
         jToggleButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -480,9 +478,9 @@ public class Inicio extends javax.swing.JFrame {
         jLabel16.setText("Hola, User");
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel22.setText("Pedido Actual");
+        jLabel22.setText("Pedido actual");
 
-        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -496,7 +494,7 @@ public class Inicio extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
-        jTable2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jTable2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -513,12 +511,12 @@ public class Inicio extends javax.swing.JFrame {
         jLabel18.setForeground(new java.awt.Color(102, 102, 102));
         jLabel18.setText("Mostrados #0");
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel15.setText("$ 0.00");
+        jLabelTotal.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabelTotal.setText("$ 0.00");
 
-        jLabel17.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel17.setText("$ 0.00");
-        jLabel17.setToolTipText("");
+        jLabelSubtotal.setForeground(new java.awt.Color(102, 102, 102));
+        jLabelSubtotal.setText("$ 0.00");
+        jLabelSubtotal.setToolTipText("");
 
         jLabel19.setForeground(new java.awt.Color(102, 102, 102));
         jLabel19.setText("Impuestos (15%)");
@@ -526,9 +524,9 @@ public class Inicio extends javax.swing.JFrame {
         jLabel20.setForeground(new java.awt.Color(102, 102, 102));
         jLabel20.setText("Subtotal");
 
-        jLabel21.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel21.setText("$ 0.00");
-        jLabel21.setToolTipText("");
+        jLabelImpuestos.setForeground(new java.awt.Color(102, 102, 102));
+        jLabelImpuestos.setText("$ 0.00");
+        jLabelImpuestos.setToolTipText("");
 
         jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel23.setText("Total:");
@@ -584,27 +582,25 @@ public class Inicio extends javax.swing.JFrame {
         jTextFieldDireccionCliente.setEditable(false);
         jTextFieldDireccionCliente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel5.setText("Direccion");
+        jLabel5.setText("Dirección");
 
         jTextFieldNombresClientes.setEditable(false);
         jTextFieldNombresClientes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jButton7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton7.setText("Para Llevar");
+        jButton7.setText("Para llevar");
 
         jButton8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton8.setText("Cobrar");
+        jButton8.addActionListener(this::jButton8ActionPerformed);
 
         jLabel6.setText("Cantidad:");
 
         jSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
 
-        jTextFieldDireccionCliente1.setEditable(false);
-        jTextFieldDireccionCliente1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        jLabel7.setText("Telefono");
-
-        jLabel8.setText("Telefono");
+        jToggleButton10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jToggleButton10.setText("Editar");
+        jToggleButton10.addActionListener(this::jToggleButton10ActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -634,7 +630,9 @@ public class Inicio extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(jToggleButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jToggleButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -660,13 +658,13 @@ public class Inicio extends javax.swing.JFrame {
                                     .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(191, 191, 191)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabelTotal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelImpuestos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelSubtotal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(130, 130, 130)
+                                .addGap(163, 163, 163)
                                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 929, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -678,14 +676,12 @@ public class Inicio extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(150, 150, 150)
+                                .addComponent(jLabel69))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(35, 35, 35)
-                                        .addComponent(jLabel69))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(44, 44, 44)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(44, 44, 44)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextFieldIdentificaionCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -698,32 +694,19 @@ public class Inicio extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(19, 19, 19)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jTextFieldDireccionCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jTextFieldDireccionCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(0, 0, Short.MAX_VALUE)))
-                                        .addGap(15, 15, 15))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addContainerGap())))))))
+                                        .addComponent(jTextFieldDireccionCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(15, 15, 15))))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(1178, 1178, 1178)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(16, 16, 16)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -755,26 +738,23 @@ public class Inicio extends javax.swing.JFrame {
                     .addComponent(jToggleButton9)
                     .addComponent(ButtonEliminarProducto)
                     .addComponent(jToggleButton7)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton10))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 37, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jLabel7)
+                .addGap(77, 77, 77)
+                .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldDireccionCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel5))
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldDireccionCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -783,32 +763,27 @@ public class Inicio extends javax.swing.JFrame {
                         .addComponent(jTextFieldNombresClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel6)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton6)
-                        .addComponent(jButton7)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton6)
+                    .addComponent(jButton7)
+                    .addComponent(jButton5))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelImpuestos, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(65, 65, 65)
-                    .addComponent(jLabel8)
-                    .addContainerGap(556, Short.MAX_VALUE)))
+                .addComponent(jButton8)
+                .addGap(0, 25, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("Nuevo Pedido", jPanel2);
@@ -834,7 +809,7 @@ public class Inicio extends javax.swing.JFrame {
         jToggleButton12.addActionListener(this::jToggleButton12ActionPerformed);
 
         jToggleButton13.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jToggleButton13.setText("Marcar Listo");
+        jToggleButton13.setText("Marcar como listo");
         jToggleButton13.addActionListener(this::jToggleButton13ActionPerformed);
 
         jToggleButton14.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1218,7 +1193,7 @@ public class Inicio extends javax.swing.JFrame {
 
         jLabel62.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel62.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel62.setText("Sucursal de Origen");
+        jLabel62.setText("Sucursal de origen");
 
         jButton2.setText("+");
         jButton2.addActionListener(this::jButton2ActionPerformed);
@@ -1237,10 +1212,10 @@ public class Inicio extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projects/abracadabra/mavenproject2/Vista/Pictures/1600145.png"))); // NOI18N
-        jButton4.setText("Generar Solicitud de Traslado");
+        jButton4.setText("Generar solicitud de traslado");
 
         jLabel65.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
-        jLabel65.setText("Solicitudes Reciente");
+        jLabel65.setText("Solicitudes recientes");
         jLabel65.setToolTipText("");
 
         jTable8.setModel(new javax.swing.table.DefaultTableModel(
@@ -1433,8 +1408,10 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
-        PedidosViewManager.AgregarPedido(jTable1, jSpinner1);
-        PedidosViewManager.CargarTablaPedidos(jTable2);
+        if (PedidosViewManager.AgregarPedido(jTable1, jSpinner1)) {
+            PedidosViewManager.FiltrarPedidoConClienteActual(jLabelSubtotal, jLabelImpuestos, jLabelTotal, jTable2, jTextFieldIdentificaionCliente);
+            ProductosViewManager.CargarTabla(jTable1);
+        }
     }//GEN-LAST:event_jToggleButton7ActionPerformed
 
     private void jToggleButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton9ActionPerformed
@@ -1496,15 +1473,18 @@ public class Inicio extends javax.swing.JFrame {
         ServiciosCliente.IsClient = false;
         ClienteViewManager.CargarDatosCliente(jTextFieldIdentificaionCliente,
                 jTextFieldNombresClientes, jTextFieldDireccionCliente);
+        PedidosViewManager.FiltrarPedidoConClienteActual(jLabelSubtotal, jLabelImpuestos, jLabelTotal, jTable2, jTextFieldIdentificaionCliente);
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         SeleccionarCliente usersConfig = new SeleccionarCliente(this, true);
         usersConfig.setLocationRelativeTo(null);
         usersConfig.setVisible(true);
         ClienteViewManager.CargarDatosCliente(jTextFieldIdentificaionCliente,
                 jTextFieldNombresClientes, jTextFieldDireccionCliente);
-    }//GEN-LAST:event_jButton6ActionPerformed
+        PedidosViewManager.FiltrarPedidoConClienteActual(jLabelSubtotal, jLabelImpuestos, jLabelTotal, jTable2, jTextFieldIdentificaionCliente);
+                                            
+    }                                        
 
     private void jToggleButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton12ActionPerformed
     }//GEN-LAST:event_jToggleButton12ActionPerformed
@@ -1521,6 +1501,21 @@ public class Inicio extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jToggleButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton10ActionPerformed
+        // Editar Producto
+        ProductosViewManager.CargarProductoAEditar(jTable1);
+        EditarProducto editarProducto = new EditarProducto(this, true);
+        editarProducto.setLocationRelativeTo(null);
+        editarProducto.setVisible(true);
+        ProductosViewManager.CargarTabla(jTable1);
+
+    }//GEN-LAST:event_jToggleButton10ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        PedidosViewManager.CobrarPedido(jLabelSubtotal, jLabelImpuestos, jLabelTotal,
+                jTable2, jTextFieldIdentificaionCliente);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1528,7 +1523,7 @@ public class Inicio extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -1564,14 +1559,11 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -1624,8 +1616,9 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabelImpuestos;
+    private javax.swing.JLabel jLabelSubtotal;
+    private javax.swing.JLabel jLabelTotal;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -1665,10 +1658,10 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextFieldDireccionCliente;
-    private javax.swing.JTextField jTextFieldDireccionCliente1;
     private javax.swing.JTextField jTextFieldIdentificaionCliente;
     private javax.swing.JTextField jTextFieldNombresClientes;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton10;
     private javax.swing.JToggleButton jToggleButton11;
     private javax.swing.JToggleButton jToggleButton12;
     private javax.swing.JToggleButton jToggleButton13;

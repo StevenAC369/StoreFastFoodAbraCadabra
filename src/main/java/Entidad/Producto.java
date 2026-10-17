@@ -25,6 +25,17 @@ public class Producto {
         this.estado = estado;
         this.categoria = categoria;
     }
+    
+    public Producto(String codigo, String descripcion, Double precio, Integer cantidad, String estado, String categoria, Double sub) {
+        this.codigo = codigo;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.cantidad = cantidad;
+        this.estado = estado;
+        this.categoria = categoria;
+        this.sub = sub;
+    }
+    
 
     public String getCodigo() {
         return codigo;

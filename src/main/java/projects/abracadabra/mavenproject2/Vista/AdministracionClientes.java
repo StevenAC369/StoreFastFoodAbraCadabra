@@ -53,7 +53,7 @@ public class AdministracionClientes extends javax.swing.JDialog {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Administración de Clientes");
+        setTitle("Administración de clientes");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -69,7 +69,7 @@ public class AdministracionClientes extends javax.swing.JDialog {
         jScrollPane1.setViewportView(jTable1);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("Administre los Clientes de la Tienda");
+        jLabel1.setText("Administre los clientes de la tienda");
 
         jButtonGuardar.setText("Guardar");
         jButtonGuardar.addActionListener(this::jButtonGuardarActionPerformed);
@@ -78,9 +78,9 @@ public class AdministracionClientes extends javax.swing.JDialog {
 
         jLabel3.setText("Nombres");
 
-        jLabel4.setText("Telefono");
+        jLabel4.setText("Teléfono");
 
-        jLabel5.setText("Direccion");
+        jLabel5.setText("Dirección");
 
         jButtonActualizar.setText("Actualizar");
         jButtonActualizar.addActionListener(this::jButtonActualizarActionPerformed);

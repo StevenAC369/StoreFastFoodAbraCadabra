@@ -282,7 +282,7 @@ public class Inicio_Login extends javax.swing.JFrame {
 
         jLabel34.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel34.setText("Clientes Actual");
+        jLabel34.setText("Clientes actuales");
 
         jLabel35.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(0, 153, 0));
@@ -335,14 +335,14 @@ public class Inicio_Login extends javax.swing.JFrame {
         jScrollPane4.setViewportView(jTableProductos);
 
         jLabel37.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel37.setText("Acciones Recientes");
+        jLabel37.setText("Acciones recientes");
 
         jToggleButton10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jToggleButton10.setText("Administrar Clientes");
+        jToggleButton10.setText("Administrar clientes");
         jToggleButton10.addActionListener(this::jToggleButton10ActionPerformed);
 
         jToggleButton11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jToggleButton11.setText("Ver Reporte");
+        jToggleButton11.setText("Ver reporte");
         jToggleButton11.addActionListener(this::jToggleButton11ActionPerformed);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -444,7 +444,7 @@ public class Inicio_Login extends javax.swing.JFrame {
         jToggleButton2.addActionListener(this::jToggleButton2ActionPerformed);
 
         jToggleButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jToggleButton3.setText("Hamburgueas");
+        jToggleButton3.setText("Hamburguesas");
         jToggleButton3.addActionListener(this::jToggleButton3ActionPerformed);
 
         jToggleButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -476,7 +476,7 @@ public class Inicio_Login extends javax.swing.JFrame {
         jLabel16.setText("Hola, User");
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel22.setText("Pedido Actual");
+        jLabel22.setText("Pedido actual");
 
         jTable1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -580,13 +580,13 @@ public class Inicio_Login extends javax.swing.JFrame {
         jTextFieldDireccionCliente.setEditable(false);
         jTextFieldDireccionCliente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel5.setText("Direccion");
+        jLabel5.setText("Dirección");
 
         jTextFieldNombresClientes.setEditable(false);
         jTextFieldNombresClientes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jButton7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton7.setText("Para Llevar");
+        jButton7.setText("Para llevar");
 
         jButton8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton8.setText("Cobrar");
@@ -793,7 +793,7 @@ public class Inicio_Login extends javax.swing.JFrame {
         jToggleButton12.addActionListener(this::jToggleButton12ActionPerformed);
 
         jToggleButton13.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jToggleButton13.setText("Marcar Listo");
+        jToggleButton13.setText("Marcar como listo");
         jToggleButton13.addActionListener(this::jToggleButton13ActionPerformed);
 
         jToggleButton14.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1177,7 +1177,7 @@ public class Inicio_Login extends javax.swing.JFrame {
 
         jLabel62.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel62.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel62.setText("Sucursal de Origen");
+        jLabel62.setText("Sucursal de origen");
 
         jButton2.setText("+");
         jButton2.addActionListener(this::jButton2ActionPerformed);
@@ -1196,10 +1196,10 @@ public class Inicio_Login extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projects/abracadabra/mavenproject2/Vista/Pictures/1600145.png"))); // NOI18N
-        jButton4.setText("Generar Solicitud de Traslado");
+        jButton4.setText("Generar solicitud de traslado");
 
         jLabel65.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
-        jLabel65.setText("Solicitudes Reciente");
+        jLabel65.setText("Solicitudes recientes");
         jLabel65.setToolTipText("");
 
         jTable8.setModel(new javax.swing.table.DefaultTableModel(

@@ -12,13 +12,14 @@ public class Main {
    
 
      public static void main(String[] args) {
+        // Ejecuta las ventanas aadaptandose a la interfaz del sistema
         try {
            javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Master.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } 
-         try
-         {
+        try
+        {
              
             javax.swing.SwingUtilities.invokeLater(() -> {
              Master login = new Master();

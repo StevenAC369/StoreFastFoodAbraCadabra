@@ -10,14 +10,19 @@ import java.util.*;
  * @author Steven
  */
 public class Pedidos {
+    public static final String ESTADO_PENDIENTE_PAGO = "Pendiente de pago";
+    public static final String ESTADO_PAGADO = "Pagado";
+
     Integer ID;
     Cliente cliente;
     List<Producto> productos;
     Double SubTotal;
+    String estado;
     Date fecha_creacion;
     LocalTime hora_creacion;
     public Pedidos() {
         this.productos = new ArrayList<>();
+        this.estado = ESTADO_PENDIENTE_PAGO;
     }
 
 
@@ -26,6 +31,7 @@ public class Pedidos {
         this.cliente = cliente;
         this.productos = new ArrayList<>();
         this.SubTotal = SubTotal;
+        this.estado = ESTADO_PENDIENTE_PAGO;
     }
 
     public Pedidos(Integer ID, Cliente cliente, Date fecha_creacion, LocalTime hora_creacion) {
@@ -34,6 +40,7 @@ public class Pedidos {
         this.productos = new ArrayList<>();
         this.fecha_creacion = fecha_creacion;
         this.hora_creacion = hora_creacion;
+        this.estado = ESTADO_PENDIENTE_PAGO;
     }
     
     public void AddProducto(Producto... producto)
@@ -68,6 +75,10 @@ public class Pedidos {
     public Double getSubTotal() {
         return SubTotal;
     }
+
+    public String getEstado() {
+        return estado;
+    }
     
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
@@ -75,6 +86,10 @@ public class Pedidos {
 
     public void setProductos(List<Producto> productos) {
         this.productos = productos;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
     
 }

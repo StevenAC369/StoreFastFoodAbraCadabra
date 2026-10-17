@@ -13,9 +13,9 @@ import java.sql.SQLException;
  * @author Steven
  */
 public class Conexion {
-    private static final String URL = "";
-    private static final String USUARIO = "";
-    private static final String PASSWORD = "";
+    private static final String URL = "jdbc:postgresql://172.19.251.34/tienda";
+    private static final String USUARIO = "yuki";
+    private static final String PASSWORD = "jdsfjiuio89342";
     
     
 

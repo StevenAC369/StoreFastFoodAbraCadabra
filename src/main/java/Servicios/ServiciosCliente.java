@@ -43,6 +43,8 @@ public class ServiciosCliente {
     {
         return databaseClientes.BuscarCliente(identificacion, parametro1, parametro2, isSearch); 
     }
+    
+    
     public static void ActualizarCliente(String id_antiguo, Cliente cliente) {
         databaseClientes.ActualizarCliente(id_antiguo, cliente);
     }

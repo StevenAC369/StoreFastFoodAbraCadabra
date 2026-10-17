@@ -10,17 +10,21 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.*;
 import Entidad.Producto;
 
+
 /**
  *
  * @author Steven
  */
 public class ProductosViewManager {
+    
+    public static String codigo_antiguo;
+    public static Producto producto_antiguo;
     public static void CargarTabla(JTable tabla)
     {
         try
         {
             
-            String[] columnas = {"codigo","descripcion", "precio", "cantidad", "estado", "categoria"};
+            String[] columnas = {"Código", "Descripción", "Precio", "Cantidad", "Estado", "Categoría"};
             DefaultTableModel modelo_tabla = new DefaultTableModel(columnas, 0);
    
                 for (Producto producto_obtenido : ServiciosProductos.CargarTabla())
@@ -51,19 +55,19 @@ public class ProductosViewManager {
             
     }
 
-    public static void EliminarProducto(JTable JTableProductos)
+    public static void EliminarProducto(JTable tabla)
     {
         try 
         {
-            int FilaSeleccionada = JTableProductos.getSelectedRow();
+            int FilaSeleccionada = tabla.getSelectedRow();
             if (FilaSeleccionada!=-1) 
             {
-                String codigo = JTableProductos.getValueAt(FilaSeleccionada, 0).toString();
-                String descripcion = JTableProductos.getValueAt(FilaSeleccionada, 1).toString();
-                Double precio = Double.valueOf(JTableProductos.getValueAt(FilaSeleccionada, 2).toString());
-                Integer cantidad = Integer.valueOf(JTableProductos.getValueAt(FilaSeleccionada, 3).toString());
-                String estado = JTableProductos.getValueAt(FilaSeleccionada, 4).toString();
-                String categoria = JTableProductos.getValueAt(FilaSeleccionada, 5).toString();
+                String codigo = tabla.getValueAt(FilaSeleccionada, 0).toString();
+                String descripcion = tabla.getValueAt(FilaSeleccionada, 1).toString();
+                Double precio = Double.valueOf(tabla.getValueAt(FilaSeleccionada, 2).toString());
+                Integer cantidad = Integer.valueOf(tabla.getValueAt(FilaSeleccionada, 3).toString());
+                String estado = tabla.getValueAt(FilaSeleccionada, 4).toString();
+                String categoria = tabla.getValueAt(FilaSeleccionada, 5).toString();
                 Producto producto = new Producto(codigo, descripcion, precio, cantidad, estado, categoria);
                 ServiciosProductos.EliminarProducto(producto);
                
@@ -86,7 +90,7 @@ public class ProductosViewManager {
                 return;
             }
             
-            String[] columnas = {"codigo","descripcion", "precio", "cantidad", "estado", "categoria"};
+            String[] columnas = {"Código", "Descripción", "Precio", "Cantidad", "Estado", "Categoría"};
             DefaultTableModel modelo_tabla = new DefaultTableModel(columnas, 0);
    
             for (Producto producto_obtenido : ServiciosProductos.BuscarProducto(codigo, parametro1, parametro2, SIMILAR_TO))
@@ -102,4 +106,61 @@ public class ProductosViewManager {
         }
         
     }
+    
+    public static void EditarProducto(String codigo, String descripcion, String precio, String cantidad, String estado, String Categoria)
+    {
+        try
+        {
+            Producto product = new Producto(codigo, descripcion, Double.parseDouble(precio), Integer.parseInt(cantidad), estado,Categoria);
+            ServiciosProductos.ActualizarProducto(producto_antiguo.getCodigo(), product);
+        }
+        catch (Exception ex)
+        {
+            System.out.println("Error: "+ex.toString());
+        }
+    }
+    
+       
+    public static void CargarProductoAEditar(JTable tabla)
+    {
+        try
+        {
+            int FilaSeleccionada = tabla.getSelectedRow();
+            if (FilaSeleccionada!=-1) 
+            {
+                String codigo = tabla.getValueAt(FilaSeleccionada, 0).toString();
+                String descripcion = tabla.getValueAt(FilaSeleccionada, 1).toString();
+                Double precio = Double.valueOf(tabla.getValueAt(FilaSeleccionada, 2).toString());
+                Integer cantidad = Integer.valueOf(tabla.getValueAt(FilaSeleccionada, 3).toString());
+                String estado = tabla.getValueAt(FilaSeleccionada, 4).toString();
+                String categoria = tabla.getValueAt(FilaSeleccionada, 5).toString();
+                Producto producto = new Producto(codigo, descripcion, precio, cantidad, estado, categoria);
+                producto_antiguo = producto;
+               
+            } else {
+                JOptionPane.showMessageDialog(null, "No se ha seleccionado ningún producto para editar.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println("Error: "+ex.toString());
+                    
+        }
+    }
+    
+    public static void CargarCampos(JTextPane codigo, JTextPane descripcion, JTextPane precio, JTextPane cantidad, JComboBox estado, JComboBox categoria)
+    {
+        codigo.setText(producto_antiguo.getCodigo());
+        descripcion.setText(producto_antiguo.getDescripcion());
+        precio.setText(String.valueOf(producto_antiguo.getPrecio()));
+        cantidad.setText(String.valueOf(producto_antiguo.getCantidad()));
+        estado.setSelectedItem(producto_antiguo.getEstado());
+        categoria.setSelectedItem(producto_antiguo.getCategoria());
+    }    
+    
+    public static void CalcularTotal()
+    {
+        
+    }
+        
 }

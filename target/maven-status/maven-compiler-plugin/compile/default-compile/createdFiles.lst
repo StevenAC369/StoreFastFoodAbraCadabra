@@ -1,7 +1,6 @@
 Servicios\UsuarioActivo.class
 Servicios\ServiciosProductos.class
 projects\abracadabra\mavenproject2\Vista\AgregarProducto.class
-projects\abracadabra\mavenproject2\Vista\CRUD_Interface\UsuariosViewManager.class
 Entidad\Usuario.class
 Servicios\ClienteActivo.class
 Data\UserDAO.class
@@ -9,7 +8,6 @@ Entidad\Producto.class
 projects\abracadabra\mavenproject2\Vista\CRUD_Interface\PedidosViewManager.class
 Data\Conexion.class
 Entidad\Cliente.class
-projects\abracadabra\mavenproject2\Vista\CRUD_Interface\ProductosViewManager.class
 Entidad\Pedidos.class
 Servicios\ServiciosPedidos.class
 Data\ProductosDAO.class

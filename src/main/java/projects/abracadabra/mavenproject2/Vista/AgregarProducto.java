@@ -52,7 +52,7 @@ public class AgregarProducto extends javax.swing.JDialog {
         ButtonAgregarProducto.setText("Agregar");
         ButtonAgregarProducto.addActionListener(this::ButtonAgregarProductoActionPerformed);
 
-        jLabel1.setText("Codigo");
+        jLabel1.setText("Código");
 
         jLabel2.setText("Precio");
 

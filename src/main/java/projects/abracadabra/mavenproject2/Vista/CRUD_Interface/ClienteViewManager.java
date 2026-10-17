@@ -22,7 +22,7 @@ public class ClienteViewManager {
         {
             List<Cliente> clientes = ServiciosCliente.MostrarClientes(tabla);
             DefaultTableModel modeloTabla = new DefaultTableModel(
-                    new String[]{"identificacion", "nombres", "telefono", "direccion"}, 0);
+                    new String[]{"Identificación", "Nombres", "Teléfono", "Dirección"}, 0);
             for (Cliente cliente : clientes) {
                 modeloTabla.addRow(new Object[]{
                     cliente.getIdentificacion(),
@@ -86,7 +86,7 @@ public class ClienteViewManager {
                     {
                         List<Cliente> clientes = ServiciosCliente.BuscarCliente(identificacion, parametro1, parametro2, true);
                         DefaultTableModel modeloTabla = new DefaultTableModel(
-                        new String[]{"identificacion", "nombres", "telefono", "direccion"}, 0);
+                        new String[]{"Identificación", "Nombres", "Teléfono", "Dirección"}, 0);
                             for (Cliente cliente : clientes) {
                                 modeloTabla.addRow(new Object[]{
                                 cliente.getIdentificacion(),
