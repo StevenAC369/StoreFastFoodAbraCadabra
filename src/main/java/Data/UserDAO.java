@@ -78,4 +78,18 @@ public class UserDAO {
             throw ex;
         }
     }
+
+    public void AgregarUsuario(String username, String password, String rol) throws SQLException {
+        String sql = "INSERT INTO usuarios (username, password, rol) VALUES (?, ?, ?)";
+        try (Connection conexion = Conexion.obtenerConexion();
+             PreparedStatement ps = conexion.prepareStatement(sql)) {
+            ps.setString(1, username);
+            ps.setString(2, password);
+            ps.setString(3, rol);
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println("No se pudo agregar el usuario: " + ex.getMessage());
+            throw ex;
+        }
+    }
 }

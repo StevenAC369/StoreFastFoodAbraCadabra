@@ -14,17 +14,17 @@ public class AdministradorDePermisos {
     
     public static void VerificarBotonesSuperSudo(JToggleButton... boton)
     {
-        if (UsuarioActivo.rol=="Administrador" || UsuarioActivo.rol=="Propietario")
+        if ("Administrador".equals(UsuarioActivo.rol) || "Propietario".equals(UsuarioActivo.rol))
         {
            for (JToggleButton boton_get : boton)
            {
-               boton_get.enable(true);
+               boton_get.setEnabled(true);
            }
         } else 
         {
            for (JToggleButton boton_get : boton)
            {
-               boton_get.enable(false);
+               boton_get.setEnabled(false);
            }        
         }   
         

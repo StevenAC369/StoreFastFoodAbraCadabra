@@ -40,4 +40,8 @@ public class Usuario {
     {
         return fecha_creacion;
     }
+    
+    public String getPassword() {
+        return password;
+    }
 }

@@ -297,10 +297,11 @@
                     <Component class="javax.swing.JComboBox" name="jComboBox1">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="3">
+                          <StringArray count="4">
                             <StringItem index="0" value="Visualizador"/>
                             <StringItem index="1" value="Editor "/>
                             <StringItem index="2" value="Administrador"/>
+                            <StringItem index="3" value="Cajero"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -320,6 +321,9 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Agregar Miembro"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="jButton6">
                       <Properties>

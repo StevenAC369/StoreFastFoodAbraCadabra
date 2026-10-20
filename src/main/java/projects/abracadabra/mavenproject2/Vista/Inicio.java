@@ -6,6 +6,7 @@ package projects.abracadabra.mavenproject2.Vista;
 import projects.abracadabra.mavenproject2.Vista.CRUD_Interface.*;
 import Servicios.*;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author Steven
@@ -19,10 +20,10 @@ public class Inicio extends javax.swing.JFrame {
      */
     public Inicio() {
         initComponents();
+        ProductosViewManager.CargarTabla(jTableProductos);
+        PedidosViewManager.CargarTablaPedidos(jTablePedidos);
+        Permisos.VerificarPermisos(jTableResumen, jTextField2, jTablePedidos, jTableProductos, jTableColaDeCocina, ButtonSettings, ButtonVerReporte, ButtonAdministrarClientes, ButtonTodos, ButtonAcompañamientos, ButtonCombos, ButtonHamburguesas, ButtonBebidas, ButtonPostres, ButtonPedir, ButtonAgregarProducto, ButtonEliminarProducto, ButtonEditarProducto, ButtonCobrar, ButtonSeleccionarCliente, ButtonParaLlevar, ButtonCobrar, jButton6);
         AdministradorDePermisos.VerificarBotonesSuperSudo(ButtonSettings, ButtonAdministrarClientes);
-        ProductosViewManager.CargarTabla(jTable1);
-        PedidosViewManager.CargarTablaPedidos(jTable2);
-
     }
 
     /**
@@ -53,10 +54,10 @@ public class Inicio extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTableProductos = new javax.swing.JTable();
+        jTableResumen = new javax.swing.JTable();
         jLabel37 = new javax.swing.JLabel();
         ButtonAdministrarClientes = new javax.swing.JToggleButton();
-        jToggleButton11 = new javax.swing.JToggleButton();
+        ButtonVerReporte = new javax.swing.JToggleButton();
         jLabel4 = new javax.swing.JLabel();
         ButtonSettings = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
@@ -64,20 +65,20 @@ public class Inicio extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jToggleButton6 = new javax.swing.JToggleButton();
+        ButtonTodos = new javax.swing.JToggleButton();
+        ButtonCombos = new javax.swing.JToggleButton();
+        ButtonHamburguesas = new javax.swing.JToggleButton();
+        ButtonAcompañamientos = new javax.swing.JToggleButton();
+        ButtonBebidas = new javax.swing.JToggleButton();
+        ButtonPostres = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel4 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableProductos = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTablePedidos = new javax.swing.JTable();
         jLabel18 = new javax.swing.JLabel();
         jLabelTotal = new javax.swing.JLabel();
         jLabelSubtotal = new javax.swing.JLabel();
@@ -85,28 +86,28 @@ public class Inicio extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabelImpuestos = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jToggleButton7 = new javax.swing.JToggleButton();
+        ButtonPedir = new javax.swing.JToggleButton();
         ButtonEliminarProducto = new javax.swing.JToggleButton();
-        jToggleButton9 = new javax.swing.JToggleButton();
+        ButtonAgregarProducto = new javax.swing.JToggleButton();
         jTextField2 = new javax.swing.JTextField();
         jTextFieldIdentificaionCliente = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        ButtonSeleccionarCliente = new javax.swing.JToggleButton();
         jLabel69 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JToggleButton();
         jLabel3 = new javax.swing.JLabel();
         jTextFieldDireccionCliente = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jTextFieldNombresClientes = new javax.swing.JTextField();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        ButtonParaLlevar = new javax.swing.JToggleButton();
+        ButtonCobrar = new javax.swing.JToggleButton();
         jLabel6 = new javax.swing.JLabel();
         jSpinner1 = new javax.swing.JSpinner();
-        jToggleButton10 = new javax.swing.JToggleButton();
+        ButtonEditarProducto = new javax.swing.JToggleButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel38 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        jTableColaDeCocina = new javax.swing.JTable();
         jToggleButton12 = new javax.swing.JToggleButton();
         jToggleButton13 = new javax.swing.JToggleButton();
         jToggleButton14 = new javax.swing.JToggleButton();
@@ -323,7 +324,7 @@ public class Inicio extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel13.setText("Dashboard");
 
-        jTableProductos.setModel(new javax.swing.table.DefaultTableModel(
+        jTableResumen.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -334,7 +335,7 @@ public class Inicio extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane4.setViewportView(jTableProductos);
+        jScrollPane4.setViewportView(jTableResumen);
 
         jLabel37.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel37.setText("Acciones recientes");
@@ -343,9 +344,9 @@ public class Inicio extends javax.swing.JFrame {
         ButtonAdministrarClientes.setText("Administrar clientes");
         ButtonAdministrarClientes.addActionListener(this::ButtonAdministrarClientesActionPerformed);
 
-        jToggleButton11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jToggleButton11.setText("Ver reporte");
-        jToggleButton11.addActionListener(this::jToggleButton11ActionPerformed);
+        ButtonVerReporte.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ButtonVerReporte.setText("Ver reporte");
+        ButtonVerReporte.addActionListener(this::ButtonVerReporteActionPerformed);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
@@ -385,7 +386,7 @@ public class Inicio extends javax.swing.JFrame {
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 1026, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jToggleButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ButtonVerReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ButtonAdministrarClientes)
                             .addComponent(ButtonSettings, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(70, 70, 70))
@@ -421,9 +422,9 @@ public class Inicio extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(111, 111, 111)
                         .addComponent(ButtonAdministrarClientes)
-                        .addGap(48, 48, 48)
-                        .addComponent(jToggleButton11)
-                        .addGap(47, 47, 47)
+                        .addGap(36, 36, 36)
+                        .addComponent(ButtonVerReporte)
+                        .addGap(59, 59, 59)
                         .addComponent(ButtonSettings)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(91, 91, 91))
@@ -437,29 +438,29 @@ public class Inicio extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(102, 102, 102));
         jLabel14.setText("Buscar:");
 
-        jToggleButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jToggleButton1.setText("Todos");
-        jToggleButton1.addActionListener(this::jToggleButton1ActionPerformed);
+        ButtonTodos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ButtonTodos.setText("Todos");
+        ButtonTodos.addActionListener(this::ButtonTodosActionPerformed);
 
-        jToggleButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jToggleButton2.setText("Combos");
-        jToggleButton2.addActionListener(this::jToggleButton2ActionPerformed);
+        ButtonCombos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ButtonCombos.setText("Combos");
+        ButtonCombos.addActionListener(this::ButtonCombosActionPerformed);
 
-        jToggleButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jToggleButton3.setText("Hamburguesas");
-        jToggleButton3.addActionListener(this::jToggleButton3ActionPerformed);
+        ButtonHamburguesas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ButtonHamburguesas.setText("Hamburguesas");
+        ButtonHamburguesas.addActionListener(this::ButtonHamburguesasActionPerformed);
 
-        jToggleButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jToggleButton4.setText("Acompañamientos");
-        jToggleButton4.addActionListener(this::jToggleButton4ActionPerformed);
+        ButtonAcompañamientos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ButtonAcompañamientos.setText("Acompañamientos");
+        ButtonAcompañamientos.addActionListener(this::ButtonAcompañamientosActionPerformed);
 
-        jToggleButton5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jToggleButton5.setText("Bebidas");
-        jToggleButton5.addActionListener(this::jToggleButton5ActionPerformed);
+        ButtonBebidas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ButtonBebidas.setText("Bebidas");
+        ButtonBebidas.addActionListener(this::ButtonBebidasActionPerformed);
 
-        jToggleButton6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jToggleButton6.setText("Postres");
-        jToggleButton6.addActionListener(this::jToggleButton6ActionPerformed);
+        ButtonPostres.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ButtonPostres.setText("Postres");
+        ButtonPostres.addActionListener(this::ButtonPostresActionPerformed);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -480,8 +481,8 @@ public class Inicio extends javax.swing.JFrame {
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel22.setText("Pedido actual");
 
-        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableProductos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTableProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -492,10 +493,10 @@ public class Inicio extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(jTableProductos);
 
-        jTable2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTablePedidos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTablePedidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -506,7 +507,7 @@ public class Inicio extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane3.setViewportView(jTable2);
+        jScrollPane3.setViewportView(jTablePedidos);
 
         jLabel18.setForeground(new java.awt.Color(102, 102, 102));
         jLabel18.setText("Mostrados #0");
@@ -531,17 +532,17 @@ public class Inicio extends javax.swing.JFrame {
         jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel23.setText("Total:");
 
-        jToggleButton7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jToggleButton7.setText("Pedir");
-        jToggleButton7.addActionListener(this::jToggleButton7ActionPerformed);
+        ButtonPedir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ButtonPedir.setText("Pedir");
+        ButtonPedir.addActionListener(this::ButtonPedirActionPerformed);
 
         ButtonEliminarProducto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         ButtonEliminarProducto.setText("Eliminar");
         ButtonEliminarProducto.addActionListener(this::ButtonEliminarProductoActionPerformed);
 
-        jToggleButton9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jToggleButton9.setText("Agregar");
-        jToggleButton9.addActionListener(this::jToggleButton9ActionPerformed);
+        ButtonAgregarProducto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ButtonAgregarProducto.setText("Agregar Producto");
+        ButtonAgregarProducto.addActionListener(this::ButtonAgregarProductoActionPerformed);
 
         jTextField2.addInputMethodListener(new java.awt.event.InputMethodListener() {
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
@@ -565,9 +566,9 @@ public class Inicio extends javax.swing.JFrame {
 
         jLabel2.setText("Identificación");
 
-        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton5.setText("Consumidor Final");
-        jButton5.addActionListener(this::jButton5ActionPerformed);
+        ButtonSeleccionarCliente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ButtonSeleccionarCliente.setText("Consumidor Final");
+        ButtonSeleccionarCliente.addActionListener(this::ButtonSeleccionarClienteActionPerformed);
 
         jLabel69.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel69.setForeground(new java.awt.Color(102, 102, 102));
@@ -587,20 +588,20 @@ public class Inicio extends javax.swing.JFrame {
         jTextFieldNombresClientes.setEditable(false);
         jTextFieldNombresClientes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jButton7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton7.setText("Para llevar");
+        ButtonParaLlevar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ButtonParaLlevar.setText("Para llevar");
 
-        jButton8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton8.setText("Cobrar");
-        jButton8.addActionListener(this::jButton8ActionPerformed);
+        ButtonCobrar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        ButtonCobrar.setText("Cobrar");
+        ButtonCobrar.addActionListener(this::ButtonCobrarActionPerformed);
 
         jLabel6.setText("Cantidad:");
 
         jSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
 
-        jToggleButton10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jToggleButton10.setText("Editar");
-        jToggleButton10.addActionListener(this::jToggleButton10ActionPerformed);
+        ButtonEditarProducto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ButtonEditarProducto.setText("Editar Producto");
+        ButtonEditarProducto.addActionListener(this::ButtonEditarProductoActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -612,17 +613,17 @@ public class Inicio extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ButtonTodos, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(36, 36, 36)
-                                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ButtonCombos, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(36, 36, 36)
-                                .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ButtonHamburguesas, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(39, 39, 39)
-                                .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ButtonAcompañamientos, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(31, 31, 31)
-                                .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ButtonBebidas, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(ButtonPostres, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(34, 34, 34))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
@@ -632,13 +633,13 @@ public class Inicio extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(12, 12, 12)
-                                .addComponent(jToggleButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ButtonEditarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jToggleButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ButtonAgregarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(ButtonEliminarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jToggleButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ButtonPedir, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
@@ -663,7 +664,7 @@ public class Inicio extends javax.swing.JFrame {
                                     .addComponent(jLabelSubtotal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(163, 163, 163)
-                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(ButtonCobrar, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 929, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -685,7 +686,7 @@ public class Inicio extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextFieldIdentificaionCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton5))
+                                    .addComponent(ButtonSeleccionarCliente))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTextFieldNombresClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
@@ -693,7 +694,7 @@ public class Inicio extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ButtonParaLlevar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(19, 19, 19)
@@ -725,21 +726,21 @@ public class Inicio extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jToggleButton2)
-                        .addComponent(jToggleButton3)
-                        .addComponent(jToggleButton4)
-                        .addComponent(jToggleButton5))
-                    .addComponent(jToggleButton6)
-                    .addComponent(jToggleButton1))
+                        .addComponent(ButtonCombos)
+                        .addComponent(ButtonHamburguesas)
+                        .addComponent(ButtonAcompañamientos)
+                        .addComponent(ButtonBebidas))
+                    .addComponent(ButtonPostres)
+                    .addComponent(ButtonTodos))
                 .addGap(48, 48, 48)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton9)
+                    .addComponent(ButtonAgregarProducto)
                     .addComponent(ButtonEliminarProducto)
-                    .addComponent(jToggleButton7)
+                    .addComponent(ButtonPedir)
                     .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton10))
+                    .addComponent(ButtonEditarProducto))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -765,8 +766,8 @@ public class Inicio extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6)
-                    .addComponent(jButton7)
-                    .addComponent(jButton5))
+                    .addComponent(ButtonParaLlevar)
+                    .addComponent(ButtonSeleccionarCliente))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -782,7 +783,7 @@ public class Inicio extends javax.swing.JFrame {
                     .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton8)
+                .addComponent(ButtonCobrar)
                 .addGap(0, 25, Short.MAX_VALUE))
         );
 
@@ -791,7 +792,7 @@ public class Inicio extends javax.swing.JFrame {
         jLabel38.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel38.setText("Pedidos en cocina");
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        jTableColaDeCocina.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -802,7 +803,7 @@ public class Inicio extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane5.setViewportView(jTable4);
+        jScrollPane5.setViewportView(jTableColaDeCocina);
 
         jToggleButton12.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jToggleButton12.setText("Todos");
@@ -1184,7 +1185,7 @@ public class Inicio extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projects/abracadabra/mavenproject2/Vista/Pictures/delete.png"))); // NOI18N
-        jButton1.setText("Eliminar");
+        jButton1.setText("Eliminar Producto");
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
         jLabel61.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -1383,38 +1384,38 @@ public class Inicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
-        ProductosViewManager.BuscarProducto("Postres",jTable1, "categoria", null, true);
-    }//GEN-LAST:event_jToggleButton6ActionPerformed
+    private void ButtonPostresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPostresActionPerformed
+        ProductosViewManager.BuscarProducto("Postres",jTableProductos, "categoria", null, true);
+    }//GEN-LAST:event_ButtonPostresActionPerformed
 
-    private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
-        ProductosViewManager.BuscarProducto("Bebidas",jTable1, "categoria", null, true);
-    }//GEN-LAST:event_jToggleButton5ActionPerformed
+    private void ButtonBebidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBebidasActionPerformed
+        ProductosViewManager.BuscarProducto("Bebidas",jTableProductos, "categoria", null, true);
+    }//GEN-LAST:event_ButtonBebidasActionPerformed
 
-    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
-        ProductosViewManager.BuscarProducto("Acompañamiento",jTable1, "categoria", null, true);
-    }//GEN-LAST:event_jToggleButton4ActionPerformed
+    private void ButtonAcompañamientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAcompañamientosActionPerformed
+        ProductosViewManager.BuscarProducto("Acompañamiento",jTableProductos, "categoria", null, true);
+    }//GEN-LAST:event_ButtonAcompañamientosActionPerformed
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-        ProductosViewManager.BuscarProducto("Hamburguesas",jTable1, "categoria", null, true);
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+    private void ButtonHamburguesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonHamburguesasActionPerformed
+        ProductosViewManager.BuscarProducto("Hamburguesas",jTableProductos, "categoria", null, true);
+    }//GEN-LAST:event_ButtonHamburguesasActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        ProductosViewManager.BuscarProducto("Combos",jTable1, "categoria", null, true);
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    private void ButtonCombosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCombosActionPerformed
+        ProductosViewManager.BuscarProducto("Combos",jTableProductos, "categoria", null, true);
+    }//GEN-LAST:event_ButtonCombosActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        ProductosViewManager.BuscarProducto(null,jTable1, "categoria", null, true);
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    private void ButtonTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonTodosActionPerformed
+        ProductosViewManager.BuscarProducto(null,jTableProductos, "categoria", null, true);
+    }//GEN-LAST:event_ButtonTodosActionPerformed
 
-    private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
-        if (PedidosViewManager.AgregarPedido(jTable1, jSpinner1)) {
-            PedidosViewManager.FiltrarPedidoConClienteActual(jLabelSubtotal, jLabelImpuestos, jLabelTotal, jTable2, jTextFieldIdentificaionCliente);
-            ProductosViewManager.CargarTabla(jTable1);
+    private void ButtonPedirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPedirActionPerformed
+        if (PedidosViewManager.AgregarPedido(jTableProductos, jSpinner1)) {
+            PedidosViewManager.FiltrarPedidoConClienteActual(jLabelSubtotal, jLabelImpuestos, jLabelTotal, jTablePedidos, jTextFieldIdentificaionCliente);
+            ProductosViewManager.CargarTabla(jTableProductos);
         }
-    }//GEN-LAST:event_jToggleButton7ActionPerformed
+    }//GEN-LAST:event_ButtonPedirActionPerformed
 
-    private void jToggleButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton9ActionPerformed
+    private void ButtonAgregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAgregarProductoActionPerformed
         try {
             AgregarProducto settings = new AgregarProducto(this, true);
             settings.setLocationRelativeTo(null);
@@ -1423,7 +1424,7 @@ public class Inicio extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Error al abrir Agregar Productos: " + ex.getMessage(),
                     "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_jToggleButton9ActionPerformed
+    }//GEN-LAST:event_ButtonAgregarProductoActionPerformed
 
     private void ButtonAdministrarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAdministrarClientesActionPerformed
         try {
@@ -1436,9 +1437,9 @@ public class Inicio extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ButtonAdministrarClientesActionPerformed
 
-    private void jToggleButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton11ActionPerformed
+    private void ButtonVerReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVerReporteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton11ActionPerformed
+    }//GEN-LAST:event_ButtonVerReporteActionPerformed
 
     private void ButtonSettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSettingsActionPerformed
         try {
@@ -1452,8 +1453,8 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonSettingsActionPerformed
 
     private void ButtonEliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEliminarProductoActionPerformed
-        ProductosViewManager.EliminarProducto(jTable1);
-        ProductosViewManager.CargarTabla(jTable1);
+        ProductosViewManager.EliminarProducto(jTableProductos);
+        ProductosViewManager.CargarTabla(jTableProductos);
     }//GEN-LAST:event_ButtonEliminarProductoActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -1463,18 +1464,18 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2InputMethodTextChanged
 
     private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
-        ProductosViewManager.BuscarProducto(jTextField2.getText(), jTable1, "codigo", "descripcion", true);
+        ProductosViewManager.BuscarProducto(jTextField2.getText(), jTableProductos, "codigo", "descripcion", true);
     }//GEN-LAST:event_jTextField2KeyPressed
 
     private void jTextField2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyTyped
     }//GEN-LAST:event_jTextField2KeyTyped
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void ButtonSeleccionarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSeleccionarClienteActionPerformed
         ServiciosCliente.IsClient = false;
         ClienteViewManager.CargarDatosCliente(jTextFieldIdentificaionCliente,
                 jTextFieldNombresClientes, jTextFieldDireccionCliente);
-        PedidosViewManager.FiltrarPedidoConClienteActual(jLabelSubtotal, jLabelImpuestos, jLabelTotal, jTable2, jTextFieldIdentificaionCliente);
-    }//GEN-LAST:event_jButton5ActionPerformed
+        PedidosViewManager.FiltrarPedidoConClienteActual(jLabelSubtotal, jLabelImpuestos, jLabelTotal, jTablePedidos, jTextFieldIdentificaionCliente);
+    }//GEN-LAST:event_ButtonSeleccionarClienteActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         SeleccionarCliente usersConfig = new SeleccionarCliente(this, true);
@@ -1482,7 +1483,7 @@ public class Inicio extends javax.swing.JFrame {
         usersConfig.setVisible(true);
         ClienteViewManager.CargarDatosCliente(jTextFieldIdentificaionCliente,
                 jTextFieldNombresClientes, jTextFieldDireccionCliente);
-        PedidosViewManager.FiltrarPedidoConClienteActual(jLabelSubtotal, jLabelImpuestos, jLabelTotal, jTable2, jTextFieldIdentificaionCliente);
+        PedidosViewManager.FiltrarPedidoConClienteActual(jLabelSubtotal, jLabelImpuestos, jLabelTotal, jTablePedidos, jTextFieldIdentificaionCliente);
                                             
     }                                        
 
@@ -1501,20 +1502,20 @@ public class Inicio extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jToggleButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton10ActionPerformed
+    private void ButtonEditarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEditarProductoActionPerformed
         // Editar Producto
-        ProductosViewManager.CargarProductoAEditar(jTable1);
+        ProductosViewManager.CargarProductoAEditar(jTableProductos);
         EditarProducto editarProducto = new EditarProducto(this, true);
         editarProducto.setLocationRelativeTo(null);
         editarProducto.setVisible(true);
-        ProductosViewManager.CargarTabla(jTable1);
+        ProductosViewManager.CargarTabla(jTableProductos);
 
-    }//GEN-LAST:event_jToggleButton10ActionPerformed
+    }//GEN-LAST:event_ButtonEditarProductoActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void ButtonCobrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCobrarActionPerformed
         PedidosViewManager.CobrarPedido(jLabelSubtotal, jLabelImpuestos, jLabelTotal,
-                jTable2, jTextFieldIdentificaionCliente);
-    }//GEN-LAST:event_jButton8ActionPerformed
+                jTablePedidos, jTextFieldIdentificaionCliente);
+    }//GEN-LAST:event_ButtonCobrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1542,18 +1543,28 @@ public class Inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton ButtonAcompañamientos;
     private javax.swing.JToggleButton ButtonAdministrarClientes;
+    private javax.swing.JToggleButton ButtonAgregarProducto;
+    private javax.swing.JToggleButton ButtonBebidas;
+    private javax.swing.JToggleButton ButtonCobrar;
+    private javax.swing.JToggleButton ButtonCombos;
+    private javax.swing.JToggleButton ButtonEditarProducto;
     private javax.swing.JToggleButton ButtonEliminarProducto;
+    private javax.swing.JToggleButton ButtonHamburguesas;
+    private javax.swing.JToggleButton ButtonParaLlevar;
+    private javax.swing.JToggleButton ButtonPedir;
+    private javax.swing.JToggleButton ButtonPostres;
+    private javax.swing.JToggleButton ButtonSeleccionarCliente;
     private javax.swing.JToggleButton ButtonSettings;
+    private javax.swing.JToggleButton ButtonTodos;
+    private javax.swing.JToggleButton ButtonVerReporte;
     private javax.swing.JLabel CurrentUserActive;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JToggleButton jButton6;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
@@ -1647,31 +1658,21 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTabbedPane jTabbedPane4;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
     private javax.swing.JTable jTable8;
+    private javax.swing.JTable jTableColaDeCocina;
+    private javax.swing.JTable jTablePedidos;
     private javax.swing.JTable jTableProductos;
+    private javax.swing.JTable jTableResumen;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextFieldDireccionCliente;
     private javax.swing.JTextField jTextFieldIdentificaionCliente;
     private javax.swing.JTextField jTextFieldNombresClientes;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton10;
-    private javax.swing.JToggleButton jToggleButton11;
     private javax.swing.JToggleButton jToggleButton12;
     private javax.swing.JToggleButton jToggleButton13;
     private javax.swing.JToggleButton jToggleButton14;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
-    private javax.swing.JToggleButton jToggleButton7;
-    private javax.swing.JToggleButton jToggleButton9;
     // End of variables declaration//GEN-END:variables
 }

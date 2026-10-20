@@ -5,7 +5,7 @@
 package projects.abracadabra.mavenproject2.Vista;
 
 import projects.abracadabra.mavenproject2.Vista.CRUD_Interface.UsuariosViewManager;
-
+import projects.abracadabra.mavenproject2.Vista.SubPantallasDeAjustes.AgregarMiembro;
 /**
  *
  * @author Steven
@@ -137,12 +137,13 @@ public class Settings extends javax.swing.JDialog {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Define el rol para las nuevas invitaciones.");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Visualizador", "Editor ", "Administrador" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Visualizador", "Editor ", "Administrador", "Cajero" }));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setText("Acceso Predeterminado");
 
         jButton5.setText("Agregar Miembro");
+        jButton5.addActionListener(this::jButton5ActionPerformed);
 
         jButton6.setText("Actualizar");
         jButton6.addActionListener(this::jButton6ActionPerformed);
@@ -524,6 +525,12 @@ public class Settings extends javax.swing.JDialog {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         UsuariosViewManager.CargarTablaUsuarios(jTable2, jLabel6);
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        AgregarMiembro agregarMiembro = new AgregarMiembro(this, true, jComboBox1.getSelectedItem().toString());
+        agregarMiembro.setLocationRelativeTo(this);
+        agregarMiembro.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments

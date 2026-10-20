@@ -37,4 +37,8 @@ public class ServiciosUsuario {
         return database.ObtenerInformacionUsuarios();
     }
     
+    static public void AgregarUsuario(Usuario usuario) throws SQLException
+    {
+        database.AgregarUsuario(usuario.getUsername(), usuario.getPassword(), usuario.getRol());
+    }
 }
