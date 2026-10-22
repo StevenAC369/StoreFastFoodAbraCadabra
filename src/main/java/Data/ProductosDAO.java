@@ -30,7 +30,9 @@ public class ProductosDAO {
             System.out.println(ex.toString()+": No se pudo crear la tabla de productos:");
             
         }
-    }
+    }   
+    
+    
     
     public void AgregarProducto(Producto producto)
     {

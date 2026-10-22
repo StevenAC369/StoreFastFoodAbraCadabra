@@ -74,12 +74,25 @@ public class Permisos {
         }
         if ("Cajero".equals(UsuarioActivo.rol))
         {
-            for (JToggleButton btn : botones)
+            for (Object btn : botones)
             {
-                if (btn.getText().equals("Agregar Producto") || btn.getText().equals("Editar Producto") || btn.getText().equals("Eliminar Producto") || btn.getText().equals("Administrar Clientes") || btn.getText().equals("Ajustes"))
+                if (btn instanceof JToggleButton)
                 {
-                    btn.setEnabled(false);
+                    if (((JToggleButton) btn).getText().equals("Agregar Producto") || ((JToggleButton) btn).getText().equals("Editar Producto") || ((JToggleButton) btn).getText().equals("Eliminar Producto") || ((JToggleButton) btn).getText().equals("Administrar Clientes") || ((JToggleButton) btn).getText().equals("Ajustes"))
+                    {
+                        ((JToggleButton) btn).setEnabled(false);
+                    }
                 }
+
+                if (btn instanceof JButton)
+                {
+                    if (((JButton) btn).getText().equals("Agregar Producto") || ((JButton) btn).getText().equals("Editar Producto") || ((JButton) btn).getText().equals("Eliminar Producto") || ((JButton) btn).getText().equals("Administrar Clientes") || ((JButton) btn).getText().equals("Ajustes"))
+                    {
+                        ((JButton) btn).setEnabled(false);
+                    }
+                }
+                
+                
             }
         }
     }

@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: yumi
+      POSTGRES_PASSWORD: gnfghngfbd
+      POSTGRES_DB: tienda
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql
+
+volumes:
+  pgdata:

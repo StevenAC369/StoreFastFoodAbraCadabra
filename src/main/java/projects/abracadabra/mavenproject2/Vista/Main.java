@@ -4,6 +4,9 @@
  */
 package projects.abracadabra.mavenproject2.Vista;
 
+import java.io.IOException;
+
+
 /**
  *
  * @author Steven
@@ -15,7 +18,14 @@ public class Main {
         // Ejecuta las ventanas aadaptandose a la interfaz del sistema
         try {
            javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager.getSystemLookAndFeelClassName());
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+           // Levanta el docker compose
+           ProcessBuilder builder = new ProcessBuilder();
+           builder.command("cmd.exe", "/c", "docker-compose -f src/main/resources/docker-compose.yml up -d");
+           
+           Process process = builder.start();
+          
+
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException | IOException  ex) {
             java.util.logging.Logger.getLogger(Master.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } 
         try
