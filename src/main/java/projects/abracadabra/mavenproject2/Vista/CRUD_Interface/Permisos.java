@@ -37,7 +37,7 @@ public class Permisos {
         }
     }
 
-    public static void VerificarPermisos(JTable AccionesRecientes, JTextField buscar, JTable Productos, JTable pedidos, JTable ColaDeCocina, JToggleButton... botones)
+    public static void VerificarPermisos(JTable AccionesRecientes, JTextField buscar, JTable Productos, JTable pedidos, JTable ColaDeCocina, Object... botones)
     {
         CargarRoles();
         if ("Visualizador".equals(UsuarioActivo.rol))
@@ -57,10 +57,18 @@ public class Permisos {
 
         if ("Visualizador".equals(UsuarioActivo.rol))
         {
-            for (JToggleButton btn : botones)
+            for (Object btn : botones)
             {
+                if (btn instanceof JToggleButton)
+                {
+                    ((JToggleButton) btn).setEnabled(false);
+                }
+
+                if (btn instanceof JButton)
+                {
+                    ((JButton) btn).setEnabled(false);
+                }
                 
-                btn.setEnabled(false);
             }
             buscar.setEnabled(false);
         }
