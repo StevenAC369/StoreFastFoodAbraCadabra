@@ -22,7 +22,7 @@ public class Inicio extends javax.swing.JFrame {
         initComponents();
         ProductosViewManager.CargarTabla(jTableProductos);
         PedidosViewManager.CargarTablaPedidos(jTablePedidos);
-        Permisos.VerificarPermisos(jTableResumen, jTextField2, jTablePedidos, jTableProductos, jTableColaDeCocina, ButtonSettings, ButtonVerReporte, ButtonAdministrarClientes, ButtonTodos, ButtonAcompañamientos, ButtonCombos, ButtonHamburguesas, ButtonBebidas, ButtonPostres, ButtonPedir, ButtonAgregarProducto, ButtonEliminarProducto, ButtonEditarProducto, ButtonCobrar, ButtonSeleccionarCliente, ButtonParaLlevar, ButtonCobrar, jButton6);
+        Permisos.VerificarPermisos(jTableResumen, jTextField2, jTablePedidos, jTableProductos, jTableColaDeCocina, ButtonSettings, ButtonVerReporte, ButtonAdministrarClientes, ButtonTodos, ButtonAcompañamientos, ButtonCombos, ButtonHamburguesas, ButtonBebidas, ButtonPostres, ButtonPedir, ButtonAgregarProducto, ButtonEliminarProducto, ButtonEditarProducto, ButtonSeleccionarCliente, ButtonParaLlevar, ButtonCobrar, ButtonCobrar);
         AdministradorDePermisos.VerificarBotonesSuperSudo(ButtonSettings, ButtonAdministrarClientes);
     }
 
@@ -541,7 +541,7 @@ public class Inicio extends javax.swing.JFrame {
         ButtonEliminarProducto.addActionListener(this::ButtonEliminarProductoActionPerformed);
 
         ButtonAgregarProducto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        ButtonAgregarProducto.setText("Agregar Producto");
+        ButtonAgregarProducto.setText("Agregar");
         ButtonAgregarProducto.addActionListener(this::ButtonAgregarProductoActionPerformed);
 
         jTextField2.addInputMethodListener(new java.awt.event.InputMethodListener() {
@@ -600,7 +600,7 @@ public class Inicio extends javax.swing.JFrame {
         jSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
 
         ButtonEditarProducto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        ButtonEditarProducto.setText("Editar Producto");
+        ButtonEditarProducto.setText("Editar");
         ButtonEditarProducto.addActionListener(this::ButtonEditarProductoActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -1185,7 +1185,7 @@ public class Inicio extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projects/abracadabra/mavenproject2/Vista/Pictures/delete.png"))); // NOI18N
-        jButton1.setText("Eliminar Producto");
+        jButton1.setText("Eliminar");
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
         jLabel61.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
