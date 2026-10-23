@@ -20,9 +20,9 @@ public class Main {
            javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager.getSystemLookAndFeelClassName());
            // Levanta el docker compose
            ProcessBuilder builder = new ProcessBuilder();
-           builder.command("cmd.exe", "/c", "docker-compose -f src/main/resources/docker-compose.yml up -d");
+           builder.command("cmd.exe", "/c", "docker-compose -f docker-compose.yml up -d");
            
-           Process process = builder.start();
+           builder.start();
           
 
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException | IOException  ex) {
@@ -45,4 +45,3 @@ public class Main {
          
     }
 }
-
