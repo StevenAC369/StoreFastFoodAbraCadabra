@@ -212,4 +212,24 @@ public class PedidosViewManager {
         );
         return formato.format(importe.setScale(2, RoundingMode.HALF_UP));
     }
+
+    public void  CargarTablaHistorial(JTable tabla)
+    {
+
+    }
+
+
+    public static void CargarInformacion(JLabel total_de_ventas)
+    {
+        double total = 0;
+
+        for(Pedidos pedido: ServiciosPedidos.MostrarPedidos())
+        {
+            if(pedido.getEstado().equals(Pedidos.ESTADO_PAGADO))
+            {
+                total+=pedido.getSubTotal();
+            }
+        }
+        System.out.println("Total de ventas: "+total);
+    }
 }

@@ -38,6 +38,7 @@ public class Inicio extends javax.swing.JFrame {
         Permisos.VerificarPermisos(jTableResumen, jTextField2, jTablePedidos, jTableProductos, jTableColaDeCocina, ButtonSettings, ButtonVerReporte, ButtonAdministrarClientes, ButtonTodos, ButtonAcompañamientos, ButtonCombos, ButtonHamburguesas, ButtonBebidas, ButtonPostres, ButtonPedir, ButtonAgregarProducto, ButtonEliminarProducto, ButtonEditarProducto, ButtonSeleccionarCliente, ButtonParaLlevar, ButtonCobrar, ButtonCobrar);
         AdministradorDePermisos.VerificarBotonesSuperSudo(ButtonSettings, ButtonAdministrarClientes);
         ProductosViewManager.CargarTabla(jTable7);
+        PedidosViewManager.CargarInformacion(jLabel24);
     }
 
     /**

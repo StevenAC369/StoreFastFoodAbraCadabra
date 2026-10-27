@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="97f2fea9-5e6e-4844-80ad-d4b0087b480f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Conexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Conexion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servicios/ServiciosCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servicios/ServiciosCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/projects/abracadabra/mavenproject2/Vista/CRUD_Interface/ProductosViewManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projects/abracadabra/mavenproject2/Vista/CRUD_Interface/ProductosViewManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/projects/abracadabra/mavenproject2/Vista/Inicio.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projects/abracadabra/mavenproject2/Vista/Inicio.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/projects/abracadabra/mavenproject2/Vista/Inicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projects/abracadabra/mavenproject2/Vista/Inicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/projects/abracadabra/mavenproject2/Vista/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projects/abracadabra/mavenproject2/Vista/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Data/ClienteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Data/ClienteDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Data/Conexion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Data/Conexion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Data/PedidosDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Data/PedidosDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Data/ProductosDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Data/ProductosDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Data/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Data/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entidad/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entidad/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entidad/Pedidos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entidad/Pedidos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entidad/Producto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entidad/Producto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entidad/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entidad/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servicios/ClienteActivo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servicios/ClienteActivo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servicios/ServiciosCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servicios/ServiciosCliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servicios/ServiciosPedidos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servicios/ServiciosPedidos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servicios/ServiciosProductos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servicios/ServiciosProductos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servicios/ServiciosUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servicios/ServiciosUsuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servicios/UsuarioActivo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servicios/UsuarioActivo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/AdministracionClientes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/AdministracionClientes$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/AdministracionClientes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/AdministracionClientes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/AgregarProducto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/AgregarProducto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/CRUD_Interface/AdministradorDePermisos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/CRUD_Interface/AdministradorDePermisos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/CRUD_Interface/ClienteViewManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/CRUD_Interface/ClienteViewManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/CRUD_Interface/PedidosViewManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/CRUD_Interface/PedidosViewManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/CRUD_Interface/ProductosViewManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/CRUD_Interface/ProductosViewManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/CRUD_Interface/UsuariosViewManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/CRUD_Interface/UsuariosViewManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Inicio$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Inicio$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Inicio$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Inicio$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Inicio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Inicio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Inicio.form" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Inicio.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Inicio_Login$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Inicio_Login$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Inicio_Login$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Inicio_Login$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Inicio_Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Inicio_Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Master.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Master.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/SeleccionarCliente$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/SeleccionarCliente$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/SeleccionarCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/SeleccionarCliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projects/abracadabra/mavenproject2/Vista/Settings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="3Kc2TkySLKzzoOPFRpQ0aq0VAMd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="97f2fea9-5e6e-4844-80ad-d4b0087b480f" name="Changes" comment="" />
+      <created>1791842551107</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1791842551107</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
