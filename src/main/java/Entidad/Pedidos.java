@@ -16,7 +16,7 @@ public class Pedidos {
     Integer ID;
     Cliente cliente;
     List<Producto> productos;
-    Double SubTotal;
+    Double SubTotal=0.0;
     String estado;
     Date fecha_creacion;
     LocalTime hora_creacion;

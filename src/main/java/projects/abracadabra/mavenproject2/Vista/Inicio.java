@@ -615,7 +615,7 @@ public class Inicio extends javax.swing.JFrame {
 
         jSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
 
-        ButtonEditarProducto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ButtonEditarProducto.setFont(new java.awt.Font("Britannic", 0, 14)); // NOI18N
         ButtonEditarProducto.setText("Editar");
         ButtonEditarProducto.addActionListener(this::ButtonEditarProductoActionPerformed);
 

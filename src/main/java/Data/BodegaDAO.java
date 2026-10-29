@@ -35,6 +35,24 @@ public class BodegaDAO {
             System.out.println(ex.toString()+": No se pudo crear la tabla de bodega:");
             
         }
+
+
+        sql="CREATE TABLE IF NOT EXISTS bodega (" + 
+                        "id SERIAL PRIMARY KEY, " + 
+                        "codigo VARCHAR(50) NOT NULL, "+
+                        "descripcion TEXT, " + 
+                        "cantidad INT, " + 
+                        "sucursal VARCHAR(50)" + 
+                        ");";
+        try (Connection conexion = Conexion.obtenerConexion();
+             PreparedStatement ps = conexion.prepareStatement(sql)) {
+            if (ps.executeUpdate() > 0) {
+                    System.out.println("Se ha creado la tabla de bodega");
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.toString()+": No se pudo crear la tabla de bodega:");
+            
+        }
     }
     public List<Bodega> ListarBodega() {
     List<Bodega> lista = new ArrayList<>();
